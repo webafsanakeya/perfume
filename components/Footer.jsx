@@ -68,7 +68,7 @@ const Footer = () => {
               transition={{ duration: 2, repeat: Infinity }}
             >
               <Link href="/">
-                <span className="text-[#F28C28]">per</span>Fumes
+                <span className="text-[#F28C28]">per</span>Fume
                 <span className="text-[#F28C28] text-5xl">.</span>
               </Link>
             </motion.div>

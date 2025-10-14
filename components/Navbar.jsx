@@ -70,7 +70,7 @@ const {openSignIn} = useClerk()
         <div className="flex items-center justify-between max-w-7xl mx-auto py-4 transition-all">
           {/* Logo */}
           <Link href="/" className="relative text-3xl md:text-3xl font-bold text-white tracking-tight">
-            <span className="text-[#F28C28]">per</span>Fumes
+            <span className="text-[#F28C28]">per</span>Fume
             <span className="text-[#F28C28] text-4xl md:text-4xl leading-0">.</span>
 
             <motion.p
