@@ -1,54 +1,139 @@
-'use client'
-import { assets } from '@/assets/assets'
-import { ArrowRightIcon, ChevronRightIcon } from 'lucide-react'
-import Image from 'next/image'
-import React from 'react'
-import CategoriesMarquee from './CategoriesMarquee'
+"use client";
+import { assets } from "@/assets/assets";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { ArrowRightIcon } from "lucide-react";
+import { useState, useEffect } from "react";
 
-const Hero = () => {
+export default function Hero() {
+  const images = [
+    assets.hero_model_img,
+    assets.hero_product_img1,
+    assets.hero_product_img2,
+  ];
 
-    const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '$'
+  const overlays = [
+    "rgba(242,140,40,0.35)", // orange
+    "rgba(147,51,234,0.35)", // purple
+    "rgba(30,64,175,0.35)",  // blue
+  ];
 
-    return (
-        <div className='mx-6'>
-            <div className='flex max-xl:flex-col gap-8 max-w-7xl mx-auto my-10'>
-                <div className='relative flex-1 flex flex-col bg-green-200 rounded-3xl xl:min-h-100 group'>
-                    <div className='p-5 sm:p-16'>
-                        <div className='inline-flex items-center gap-3 bg-green-300 text-green-600 pr-4 p-1 rounded-full text-xs sm:text-sm'>
-                            <span className='bg-green-600 px-3 py-1 max-sm:ml-1 rounded-full text-white text-xs'>NEWS</span> Free Shipping on Orders Above $50! <ChevronRightIcon className='group-hover:ml-2 transition-all' size={16} />
-                        </div>
-                        <h2 className='text-3xl sm:text-5xl leading-[1.2] my-3 font-medium bg-gradient-to-r from-slate-600 to-[#A0FF74] bg-clip-text text-transparent max-w-xs  sm:max-w-md'>
-                            Gadgets you'll love. Prices you'll trust.
-                        </h2>
-                        <div className='text-slate-800 text-sm font-medium mt-4 sm:mt-8'>
-                            <p>Starts from</p>
-                            <p className='text-3xl'>{currency}4.90</p>
-                        </div>
-                        <button className='bg-slate-800 text-white text-sm py-2.5 px-7 sm:py-5 sm:px-12 mt-4 sm:mt-10 rounded-md hover:bg-slate-900 hover:scale-103 active:scale-95 transition'>LEARN MORE</button>
-                    </div>
-                    <Image className='sm:absolute bottom-0 right-0 md:right-10 w-full sm:max-w-sm' src={assets.hero_model_img} alt="" />
-                </div>
-                <div className='flex flex-col md:flex-row xl:flex-col gap-5 w-full xl:max-w-sm text-sm text-slate-600'>
-                    <div className='flex-1 flex items-center justify-between w-full bg-orange-200 rounded-3xl p-6 px-8 group'>
-                        <div>
-                            <p className='text-3xl font-medium bg-gradient-to-r from-slate-800 to-[#FFAD51] bg-clip-text text-transparent max-w-40'>Best products</p>
-                            <p className='flex items-center gap-1 mt-4'>View more <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /> </p>
-                        </div>
-                        <Image className='w-35' src={assets.hero_product_img1} alt="" />
-                    </div>
-                    <div className='flex-1 flex items-center justify-between w-full bg-blue-200 rounded-3xl p-6 px-8 group'>
-                        <div>
-                            <p className='text-3xl font-medium bg-gradient-to-r from-slate-800 to-[#78B2FF] bg-clip-text text-transparent max-w-40'>20% discounts</p>
-                            <p className='flex items-center gap-1 mt-4'>View more <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /> </p>
-                        </div>
-                        <Image className='w-35' src={assets.hero_product_img2} alt="" />
-                    </div>
-                </div>
-            </div>
-            <CategoriesMarquee />
+  const textColors = ["#ffffff", "#ffffff", "#f9fafb"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Desktop auto-slide
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  // Handle swipe
+  const handleDragEnd = (event, info) => {
+    const offset = info.offset.x;
+    if (offset < -50) setCurrentIndex((prev) => (prev + 1) % images.length);
+    else if (offset > 50) setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  return (
+    <section className="relative w-full h-[60vh] sm:h-[70vh] md:h-screen overflow-hidden">
+      {/* Background Images */}
+      <div className="absolute inset-0 -z-10">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={images[currentIndex]}
+              alt="Hero Background"
+              fill
+              priority
+              quality={100}
+              className="object-cover md:object-cover sm:object-contain object-center w-full h-full"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Overlay */}
+      <motion.div
+        key={currentIndex + "-overlay"}
+        className="absolute inset-0 -z-10"
+        animate={{ backgroundColor: overlays[currentIndex] }}
+        transition={{ duration: 1.2, ease: "easeInOut" }}
+      />
+
+      {/* Foreground Content */}
+      <motion.div
+        className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-8 md:px-16 text-center"
+        initial="hidden"
+        animate="visible"
+        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={handleDragEnd}
+        whileTap={{ cursor: "grabbing" }}
+      >
+        <motion.h1
+          style={{ color: textColors[currentIndex] }}
+          variants={{
+            hidden: { y: 40, opacity: 0 },
+            visible: { y: 0, opacity: 1, transition: { duration: 0.8 } },
+          }}
+          className="text-2xl sm:text-3xl md:text-6xl font-bold max-w-xs sm:max-w-xl md:max-w-2xl leading-snug md:leading-tight"
+        >
+          Perfumes you'll love. <br /> Prices you'll trust.
+        </motion.h1>
+
+        <motion.p
+          style={{ color: textColors[currentIndex] }}
+          variants={{
+            hidden: { y: 20, opacity: 0 },
+            visible: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.2 } },
+          }}
+          className="mt-2 sm:mt-4 text-sm sm:text-base md:text-lg max-w-xs sm:max-w-md md:max-w-xl"
+        >
+          Starts from just <span className="font-semibold">$4.90</span>. Order now and enjoy exclusive deals with free shipping.
+        </motion.p>
+
+        <motion.div
+          variants={{
+            hidden: { y: 20, opacity: 0 },
+            visible: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.4 } },
+          }}
+          className="mt-4 sm:mt-6 flex justify-center"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#000000" }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="inline-flex items-center gap-2 bg-[#F28C28] px-4 sm:px-5 py-2 sm:py-3 rounded-lg text-sm sm:text-base md:text-lg shadow-lg text-black"
+          >
+            Shop Now <ArrowRightIcon size={18} />
+          </motion.button>
+        </motion.div>
+
+        {/* Swipe Indicators */}
+        <div className="flex gap-2 mt-4 sm:mt-6">
+          {images.map((_, idx) => (
+            <motion.div
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`w-3 h-3 rounded-full cursor-pointer ${
+                idx === currentIndex ? "bg-[#F28C28]" : "bg-white/50"
+              }`}
+              whileHover={{ scale: 1.3 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
+          ))}
         </div>
-
-    )
+      </motion.div>
+    </section>
+  );
 }
-
-export default Hero
