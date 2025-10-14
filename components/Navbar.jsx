@@ -84,18 +84,18 @@ const {openSignIn} = useClerk()
 
           {/* Desktop / Tablet Menu */}
           <div className="hidden md:flex items-center gap-4 lg:gap-8 text-white">
-  {['Home', 'Shop', 'About', 'Contact'].map((item) => (
-    <motion.div
-      key={item}
-      variants={menuItemVariants}
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
-      className="hover:text-[#F28C28] transition cursor-pointer text-sm sm:text-base md:text-base"
-    >
-      <Link href={`/${item.toLowerCase()}`}>{item}</Link>
-    </motion.div>
-  ))}
+{['Home', 'Shop', 'About', 'Contact'].map((item) => (
+  <motion.div
+    key={item}
+    variants={menuItemVariants}
+    initial="initial"
+    animate="animate"
+    whileHover="hover"
+    className="hover:text-[#F28C28] transition cursor-pointer text-sm sm:text-base md:text-base"
+  >
+    <Link href={`/${item.toLowerCase()}`}>{item}</Link>
+  </motion.div>
+))}
 
             {/* Search Bar - Tablet & Desktop */}
            <form
