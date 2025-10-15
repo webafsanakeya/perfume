@@ -1,27 +1,38 @@
 # Perfume App Store
 
-An elegant and modern e-commerce platform for fragrance enthusiasts. Users can browse a curated collection of perfumes, view detailed product info, and securely purchase products, all within a sleek, responsive interface.
+An elegant and modern e-commerce platform for fragrance enthusiasts. Users can browse a curated collection of perfumes, view detailed product information, and securely purchase products—all within a sleek, responsive interface.
 
 **Live Demo:** [https://perfume-omega-seven.vercel.app/](https://perfume-omega-seven.vercel.app/)
 
 ---
 
 ## 🎯 Purpose
-- Provide a seamless online shopping experience for perfume lovers.  
-- Offer detailed product descriptions and high-quality images.  
-- Ensure secure authentication and checkout processes.  
-- Create a visually appealing, fast, and responsive UI.
+- Provide a seamless online shopping experience for perfume lovers.
+- Offer detailed product descriptions and high-quality images.
+- Ensure secure authentication and checkout processes.
+- Create a visually appealing and intuitive user interface.
+
+---
+
+## 📸 Screenshots
+
+### Login / Signup Page
+![Login Page](https://raw.githubusercontent.com/webafsanakeya/perfume/77e12d6191135c20ba38e7b2f75a3e836cf7295c/perfume-homepage2.png)
+
+### Home Page
+![Home Page](https://raw.githubusercontent.com/webafsanakeya/perfume/77e12d6191135c20ba38e7b2f75a3e836cf7295c/perfume-homepage2.png)
+
+### Shop Page
+![Shop Page](https://github.com/yourusername/perfume-app-store/blob/main/screenshots/perfume-shop.png?raw=true)
 
 ---
 
 ## ✨ Key Features
-- **Product Catalog:** Browse a wide range of perfumes with details.  
-- **Product Pages:** High-resolution images, notes, and pricing.  
-- **Shopping Cart:** Add items, view totals, and checkout.  
-- **Secure Authentication:** Implemented using **Clerk** for login/signup.  
-- **Serverless Functions:** Backend logic handled via **Inngest**.  
-- **Database:** Fast and reliable storage with **Neon**.  
-- **Responsive Design:** Optimized for desktop and mobile devices.  
+- **Product Catalog:** Browse a wide range of perfumes with detailed descriptions.
+- **Product Pages:** View high-resolution images, notes, and pricing information.
+- **Shopping Cart:** Add items, view totals, and proceed to checkout.
+- **Responsive Design:** Optimized for both desktop and mobile devices.
+- **Secure Checkout:** Implemented with best practices for user data protection.
 
 ---
 
@@ -29,7 +40,7 @@ An elegant and modern e-commerce platform for fragrance enthusiasts. Users can b
 
 | Category      | Tools/Tech                                |
 |---------------|-------------------------------------------|
-| Frontend      | React, Next.js                            |
+| Frontend      | React, Vite                               |
 | Styling       | TailwindCSS, DaisyUI                      |
 | Authentication| Clerk                                     |
 | Backend       | Serverless Functions with Inngest         |
@@ -40,13 +51,13 @@ An elegant and modern e-commerce platform for fragrance enthusiasts. Users can b
 ---
 
 ## 📦 NPM Packages Used
-- `react`  
-- `next`  
-- `tailwindcss`  
-- `daisyui`  
-- `clerk`  
-- `inngest`  
-- `@neondatabase/serverless`  
+- `react`
+- `next`
+- `tailwindcss`
+- `daisyui`
+- `clerk`
+- `inngest`
+- `@neondatabase/serverless`
 
 ---
 
