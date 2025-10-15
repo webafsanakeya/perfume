@@ -16,11 +16,11 @@ An elegant and modern e-commerce platform for fragrance enthusiasts. Users can b
 
 ## 📸 Screenshots
 
-### Login / Signup Page
-![Login Page](https://raw.githubusercontent.com/webafsanakeya/perfume/77e12d6191135c20ba38e7b2f75a3e836cf7295c/perfume-homepage2.png)
-
 ### Home Page
 ![Home Page](https://raw.githubusercontent.com/webafsanakeya/perfume/77e12d6191135c20ba38e7b2f75a3e836cf7295c/perfume-homepage2.png)
+
+### Review Page
+![Review Page](https://raw.githubusercontent.com/webafsanakeya/perfume/732920756dcecbc6a161ad3a5ca8613c0bb88f54/perfume-review.png)
 
 ### Shop Page
 ![Shop Page](https://github.com/yourusername/perfume-app-store/blob/main/screenshots/perfume-shop.png?raw=true)
