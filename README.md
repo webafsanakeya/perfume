@@ -1,53 +1,57 @@
-<div align="center">
-  <h1><img src="https://gocartshop.in/favicon.ico" width="20" height="20" alt="GoCart Favicon">
-   GoCart</h1>
-  <p>
-    An open-source multi-vendor  Perfume e-commerce platform built with Next.js and Tailwind CSS.
-  </p>
-  <p>
-    <a href="https://github.com/webafsanakeya/perfume"><img src="https://img.shields.io/github/license/webafsanakeya/perfume?style=for-the-badge" alt="License"></a>
-    <a href="https://github.com/webafsanakeya/perfume"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge" alt="PRs Welcome"></a>
-    <a href="https://github.com/webafsanakeya/perfume"><img src="https://img.shields.io/github/issues/webafsanakeya/perfume?style=for-the-badge" alt="GitHub issues"></a>
-  </p>
-</div>
+# Perfume App Store
+
+An elegant and modern e-commerce platform for fragrance enthusiasts. Users can browse a curated collection of perfumes, view detailed product info, and securely purchase products, all within a sleek, responsive interface.
+
+**Live Demo:** [https://perfume-omega-seven.vercel.app/](https://perfume-omega-seven.vercel.app/)
 
 ---
 
-## 📖 Table of Contents
-
-- [✨ Features](#-features)
-- [🛠️ Tech Stack](#-tech-stack)
-- [🚀 Getting Started](#-getting-started)
-- [🤝 Contributing](#-contributing)
-- [📜 License](#-license)
+## 🎯 Purpose
+- Provide a seamless online shopping experience for perfume lovers.  
+- Offer detailed product descriptions and high-quality images.  
+- Ensure secure authentication and checkout processes.  
+- Create a visually appealing, fast, and responsive UI.
 
 ---
 
-## Features
+## ✨ Key Features
+- **Product Catalog:** Browse a wide range of perfumes with details.  
+- **Product Pages:** High-resolution images, notes, and pricing.  
+- **Shopping Cart:** Add items, view totals, and checkout.  
+- **Secure Authentication:** Implemented using **Clerk** for login/signup.  
+- **Serverless Functions:** Backend logic handled via **Inngest**.  
+- **Database:** Fast and reliable storage with **Neon**.  
+- **Responsive Design:** Optimized for desktop and mobile devices.  
 
-- **Multi-Vendor Architecture:** Allows multiple vendors to register, manage their own products, and sell on a single platform.
-- **Customer-Facing Storefront:** A beautiful and responsive user interface for customers to browse and purchase products.
-- **Vendor Dashboards:** Dedicated dashboards for vendors to manage products, view sales analytics, and track orders.
-- **Admin Panel:** A comprehensive dashboard for platform administrators to oversee vendors, products, and commissions.
+---
 
-## 🛠️ Tech Stack <a name="-tech-stack"></a>
+## 🛠 Tech Stack
 
-- **Framework:** Next.js
-- **Styling:** Tailwind CSS
-- **UI Components:** Lucide React for icons
-- **State Management:** Redux Toolkit
+| Category      | Tools/Tech                                |
+|---------------|-------------------------------------------|
+| Frontend      | React, Next.js                            |
+| Styling       | TailwindCSS, DaisyUI                      |
+| Authentication| Clerk                                     |
+| Backend       | Serverless Functions with Inngest         |
+| Database      | Neon                                      |
+| Routing       | Next.js Routing                           |
+| State Management | React Context API                        |
 
-## 🚀 Getting Started <a name="-getting-started"></a>
+---
 
-First, install the dependencies:
+## 📦 NPM Packages Used
+- `react`  
+- `next`  
+- `tailwindcss`  
+- `daisyui`  
+- `clerk`  
+- `inngest`  
+- `@neondatabase/serverless`  
 
-```bash
-npm install
+---
 
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🔗 Live Demo
+Experience it here: [Perfume App Store](https://perfume-omega-seven.vercel.app/)
+
+---
+
