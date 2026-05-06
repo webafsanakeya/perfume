@@ -27,42 +27,65 @@ An elegant and modern e-commerce platform for fragrance enthusiasts. Users can b
 
 ---
 
-## ✨ Key Features
-- **Product Catalog:** Browse a wide range of perfumes with detailed descriptions.
-- **Product Pages:** View high-resolution images, notes, and pricing information.
-- **Shopping Cart:** Add items, view totals, and proceed to checkout.
-- **Responsive Design:** Optimized for both desktop and mobile devices.
-- **Secure Checkout:** Implemented with best practices for user data protection.
+## 🌐 Live Demo
+
+👉 [**View perFumes on Vercel**](https://perfume-omega-seven.vercel.app/)
 
 ---
 
-## 🛠 Tech Stack
 
-| Category      | Tools/Tech                                |
-|---------------|-------------------------------------------|
-| Frontend      | React, Vite                               |
-| Styling       | TailwindCSS, DaisyUI                      |
-| Authentication| Clerk                                     |
-| Backend       | Serverless Functions with Inngest         |
-| Database      | Neon                                      |
-| Routing       | Next.js Routing                           |
-| State Management | React Context API                        |
+## 🖼️ Preview
 
----
+<p align="center">
+  <img src="./public/readme/homepage.png" alt="perFumes Homepage" width="800">
+</p>
 
-## 📦 NPM Packages Used
-- `react`
-- `next`
-- `tailwindcss`
-- `daisyui`
-- `clerk`
-- `inngest`
-- `@neondatabase/serverless`
+<p align="center">
+  <img src="./public/readme/shop.png" alt="perFumes Shop Page" width="800">
+</p>
+
+<p align="center">
+  <img src="./public/readme/mobile.png" alt="Mobile Responsive Preview" width="400">
+</p>
 
 ---
 
-## 🔗 Live Demo
-Experience it here: [Perfume App Store](https://perfume-omega-seven.vercel.app/)
+
+## 📖 Table of Contents
+
+- [✨ Features](#-features)
+- [🛠️ Tech Stack](#-tech-stack)
+- [🚀 Getting Started](#-getting-started)
+- [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
 
 ---
 
+## Features
+
+- **Multi-Vendor Architecture:** Allows multiple vendors to register, manage their own products, and sell on a single platform.
+- **Customer-Facing Storefront:** A beautiful and responsive user interface for customers to browse and purchase products.
+- **Vendor Dashboards:** Dedicated dashboards for vendors to manage products, view sales analytics, and track orders.
+- **Admin Panel:** A comprehensive dashboard for platform administrators to oversee vendors, products, and commissions.
+
+## 🛠️ Tech Stack <a name="-tech-stack"></a>
+
+- **Framework:** Next.js
+- **Styling:** Tailwind CSS
+- **UI Components:** Lucide React for icons
+- **State Management:** Redux Toolkit
+
+## 🚀 Getting Started <a name="-getting-started"></a>
+
+First, install the dependencies:
+
+```bash
+npm install
+
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
